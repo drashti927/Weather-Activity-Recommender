@@ -152,7 +152,7 @@ The system shall store user data with:
 
 A diagram of weather service
 
-![My Diagram](images/diagram.png)
+![My Diagram](images/SystemArchitectureDiagram.png)
 
 ---
 
