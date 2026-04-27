@@ -9,7 +9,6 @@ This system uses a microservice architecture where all services communicate via 
 ## Architecture Diagram
 
 ```mermaid
-graph TD
 flowchart LR
 
 UI[User Interface (CLI)]
