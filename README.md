@@ -15,6 +15,21 @@ This system follows a microservice architecture where each component is independ
 
 All services communicate using HTTP requests and exchange data in JSON format.
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+UI[User Interface (CLI)]
+REC[Recommendation Service]
+WEA[Weather Service]
+USR[User Profile Service]
+
+UI <--> REC
+REC <--> WEA
+REC <--> USR
+```
+
 ## Communication
 - REST API (HTTP)
 - JSON format
