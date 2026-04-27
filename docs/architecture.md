@@ -86,7 +86,7 @@ USR --> DB
 
 ---
 
-# 🔌 Communication and Protocols
+# Communication and Protocols
 
 * **Protocol:** HTTP
 * **Architecture Style:** REST
@@ -94,7 +94,7 @@ USR --> DB
 
 ---
 
-## 📡 Example API Endpoints
+## Example API Endpoints
 
 ```id="x9kq2m"
 GET /weather?city=Pittsburgh
@@ -119,5 +119,5 @@ Services communicate using lightweight HTTP requests.
 Weather Service uses external APIs to ensure real-time data accuracy.
 
 
-## Summaray
+# Summaray
 The system follows a modular microservice architecture where each service has a clear responsibility. The Recommendation Service acts as the principal component that integrates all data and generates personalized recommendations.
