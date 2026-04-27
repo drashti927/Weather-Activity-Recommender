@@ -1,12 +1,12 @@
 # Weather-Activity-Recommender System
 
 ## Project Overview
-This system is a microservice-based REST system that provides personalized activity recommendations based on real-time weather data and user preferences. 
+This system is a microservice-based REST application that provides personalized activity recommendations based on real-time weather data and user preferences.
 
-It demonstates distributed system design using REST APIs and JSON communication.
+It demonstrates distributed system design using REST APIs and JSON communication between independent services.
 
 ## Architecture
-This system follows a microservice architecture where each component is independent and communicates via REST APIs.
+The system follows a microservice architecture, where each component is independent and communicates via REST APIs.
 
 - User Interface (CLI Client)
 - Recommendation Service (Main Orchestrator)
@@ -15,7 +15,15 @@ This system follows a microservice architecture where each component is independ
 
 All services communicate using HTTP requests and exchange data in JSON format.
 
-## Architecture Diagram
+### Core Services:
+   - User Interface (CLI Client)
+   - Recommendation Service (Main Orchestrator)
+   - Weather Service (External API Integration)
+   - User Profile Service (User Preferences Storage)
+
+All services communicate using HTTP requests and exchange data in JSON format.
+
+### Architecture Diagram
 
 ```mermaid
 flowchart LR
@@ -31,8 +39,9 @@ REC <--> USR
 ```
 
 ## Communication
-- REST API (HTTP)
-- JSON format
+- Protocol: HTTP
+- Architecture Style: REST
+- Data Format: JSON
 
 ## System Flow
 
@@ -47,14 +56,15 @@ REC <--> USR
 
 ### Weather Service
 - Fetches real-time weather using OpenWeatherMap API
+- Returns normalized weather data
 
-Endpoint:
+#### Endpoint:
 GET /weather?city=<city>
 
 ### User Profile Service
 - Stores user preferences (indoor/outdoor + activities)
 
-Endpoints:
+#### Endpoints:
 GET /user/<id>
 POST /user/<id>
 
@@ -62,11 +72,12 @@ POST /user/<id>
 - Combines weather + user data
 - Generates recommendations
 
-Endpoint:
+#### Endpoint:
 GET /recommend?userId=<id>&city=<city>
 
 ### 4. UI Client
 - Simple CLI client to interact with system.
+- Sends requests and displays results.
 ---
 
 ## How to Run
@@ -94,6 +105,7 @@ python src/ui.py
 ## Testing
 The system was tested using:
 
-- Manual CLI testing
+- Manual CLI testing for end-to-end flow
 - REST API testing via browser/Postman
 - Service-to-service communication validation
+- Unit testing for individual services
