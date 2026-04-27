@@ -8,20 +8,18 @@ This system uses a microservice architecture where all services communicate via 
 ```mermaid
 flowchart LR
 
-UI[User Interface (CLI)]
-REC[Recommendation Service]
+UI["User Interface (CLI)"]
+REC["Recommendation Service"]
+WEA["Weather Service"]
+USR["User Profile Service"]
+API["External Weather API"]
+DB[("Database")]
 
-WEA[Weather Service]
-USR[User Profile Service]
-
-API[External Weather API]
-DB[(Database)]
-
-UI <--> REC
-REC <--> WEA
-REC <--> USR
-WEA <--> API
-USR <--> DB
+UI --> REC
+REC --> WEA
+REC --> USR
+WEA --> API
+USR --> DB
 
 ```
 
