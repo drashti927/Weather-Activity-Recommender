@@ -1,10 +1,7 @@
-```markdown
 # System Architecture Design
 
 ## Overview
 This system uses a microservice architecture where all services communicate via REST APIs using JSON.
-
----
 
 ## Architecture Diagram
 
@@ -27,6 +24,8 @@ WEA <--> API
 USR <--> DB
 
 ```
+
+
 ## System Flow
 
 UI sends request to Recommendation Service
