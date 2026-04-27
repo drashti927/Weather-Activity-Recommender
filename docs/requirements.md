@@ -152,7 +152,7 @@ The system shall store user data with:
 
 A diagram of weather service
 
-Description automatically generated
+
 
 ---
 
