@@ -119,5 +119,5 @@ Services communicate using lightweight HTTP requests.
 Weather Service uses external APIs to ensure real-time data accuracy.
 
 
-# Summaray
+# Summary
 The system follows a modular microservice architecture where each service has a clear responsibility. The Recommendation Service acts as the principal component that integrates all data and generates personalized recommendations.
