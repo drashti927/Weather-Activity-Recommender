@@ -20,10 +20,10 @@ All services communicate using HTTP requests and exchange data in JSON format.
 ```mermaid
 flowchart LR
 
-UI[User Interface (CLI)]
-REC[Recommendation Service]
-WEA[Weather Service]
-USR[User Profile Service]
+UI["User Interface (CLI)"]
+REC["Recommendation Service"]
+WEA["Weather Service"]
+USR["User Profile Service"]
 
 UI <--> REC
 REC <--> WEA
