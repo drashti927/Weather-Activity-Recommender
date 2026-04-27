@@ -75,7 +75,7 @@ POST /user/<id>
 #### Endpoint:
 GET /recommend?userId=<id>&city=<city>
 
-### 4. UI Client
+### UI Client
 - Simple CLI client to interact with system.
 - Sends requests and displays results.
 ---
