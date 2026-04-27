@@ -19,8 +19,6 @@ All services communicate using HTTP requests and exchange data in JSON format.
 - REST API (HTTP)
 - JSON format
 
-## Services
-
 ## System Flow
 
 1. User enters city and user ID in CLI
