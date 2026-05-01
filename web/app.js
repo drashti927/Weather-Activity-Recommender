@@ -3,27 +3,26 @@ async function getRecommendation() {
     const city = document.getElementById("city").value;
     const userId = document.getElementById("userId").value;
 
-    const recRes = await fetch(
+    const response = await fetch(
       `http://localhost:5002/recommend?userId=${userId}&city=${city}`
     );
-    const rec = await recRes.json();
 
-    const weatherRes = await fetch(
-      `http://localhost:5000/weather?city=${city}`
-    );
-    const weather = await weatherRes.json();
+    if (!response.ok) {
+      throw new Error("Backend response failed");
+    }
+
+    const data = await response.json();
 
     document.getElementById("weather").innerText =
-      `Weather: ${weather.condition}, ${weather.tempC}°C`;
+      `Location: ${data.location}`;
 
     document.getElementById("recommendation").innerText =
-      `Recommendation: ${rec.recommendation}`;
+      `Recommendation: ${data.recommendation}`;
 
-    console.log("Weather:", weather);
-    console.log("Recommendation:", rec);
+    console.log("SUCCESS:", data);
 
   } catch (error) {
-    console.error("Error:", error);
-    alert("Backend not running or connection issue");
+    console.error(error);
+    alert("Something went wrong connecting to backend");
   }
 }
