@@ -5,8 +5,8 @@ app = Flask(__name__)
 CORS(app)
 
 users = {
-    "1": {"indoorPreferred": True, "activities": ["museum", "movies"]},
-    "2": {"indoorPreferred": False, "activities": ["sports", "hiking"]}
+    "1": {"indoorPreferred": True, "activities": ["museum", "movies", "cafes"]},
+    "2": {"indoorPreferred": False, "activities": ["sports", "hiking", "cycling",]}
 }
 
 @app.route("/user/<user_id>")
