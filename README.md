@@ -1,27 +1,51 @@
-# Weather-Activity-Recommender System
+# 🌦 Weather-Activity-Recommender System
 
 ## Project Overview
-This system is a microservice-based REST application that provides personalized activity recommendations based on real-time weather data and user preferences.
+This system is a microservice-based REST application that provides personalized activity recommendations based on real-time weather data.
+
+It uses:
+- Flask (backend microservices)
+- OpenWeather API (real-time weather data)
+- REST APIs (service communication)
+- HTML/CSS/JavaScript frontend
 
 It demonstrates distributed system design using REST APIs and JSON communication between independent services.
 
 ## Architecture
 The system follows a microservice architecture, where each component is independent and communicates via REST APIs.
 
-- User Interface (CLI Client)
-- Recommendation Service (Main Orchestrator)
-- Weather Service (External API / Weather Data Provider)
-- User Profile Service (User Preferences Storage)
+### 1. Weather Service (Port 5000)
+- Fetches real-time weather from OpenWeather API
+- Returns normalized weather data
+
+### 2. User Service (Port 5001)
+- Stores user preferences
+- Returns indoor/outdoor preferences
+
+### 3. Recommendation Service (Port 5002)
+- Combines weather + user data
+- Generates activity recommendations
+
+---
+
+## Frontend
+Simple web UI built with:
+- HTML
+- CSS (modern glassmorphism design)
+- JavaScript (fetch API)
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone <your_repo_url>
+cd Weather-Activity-Recommender
 
 All services communicate using HTTP requests and exchange data in JSON format.
 
-### Core Services:
-   - User Interface (CLI Client)
-   - Recommendation Service (Main Orchestrator)
-   - Weather Service (External API Integration)
-   - User Profile Service (User Preferences Storage)
-
-All services communicate using HTTP requests and exchange data in JSON format.
+---
 
 ### Architecture Diagram
 
@@ -83,7 +107,11 @@ GET /recommend?userId=<id>&city=<city>
 ## How to Run
 ### Step 1: Install dependencies
 ```bash
-pip install flask requests
+pip3 install -r requirements.txt
+```
+### Step 2: Create .env file (in the root folder)
+```bash
+OPENWEATHER_API_KEY=your_api_key_here
 ```
 ### Step 2: Run Weather Service (in separate terminal)
 Start Weather Service:
@@ -98,14 +126,12 @@ python src/user_service.py
 ```bash
 python src/recommendation_service.py
 ```
-### Step 5: Run UI Client (in separate terminal)
+### Step 5: Run frontend (in a browser)
 ```bash
-python src/ui.py
+web/index.html
 ```
-## Testing
-The system was tested using:
-
-- Manual CLI testing for end-to-end flow
-- REST API testing via browser/Postman
-- Service-to-service communication validation
-- Unit testing for individual services
+## How to Use
+1. Enter User ID (e.g., 1)
+2. Enter City (e.g., Pittsburgh)
+3. Click "Get Recommendation"
+4. View weather + personalized activity suggestion
