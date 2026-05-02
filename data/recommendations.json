@@ -1,0 +1,40 @@
+{
+  "rain": [
+    "Visit a museum",
+    "Go to a café",
+    "Watch a movie indoors",
+    "Read a book at a library",
+    "Go bowling",
+    "Try indoor shopping",
+    "Visit an art gallery",
+    "Cook a new recipe",
+    "Go to a gaming arcade"
+  ],
+  "clear": [
+    "Go hiking",
+    "Play outdoor sports",
+    "Visit a park",
+    "Go biking",
+    "Have a picnic",
+    "Explore downtown",
+    "Go to a beach",
+    "Outdoor photography walk",
+    "Visit a local festival"
+  ],
+  "cloud": [
+    "Take a walk",
+    "Visit a café",
+    "Go photography exploring",
+    "Visit a bookstore",
+    "Explore a park",
+    "Try outdoor dining",
+    "Visit a museum",
+    "Go shopping"
+  ],
+  "default": [
+    "Explore local attractions",
+    "Try something new",
+    "Visit a café",
+    "Walk around the city"
+  ]
+}
