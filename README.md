@@ -90,7 +90,7 @@ GET /user/<id>
 POST /user/<id>
 
 ## Recommendation Service
-Generates personalized recommendations using:
+- Generates personalized recommendations using:
    - Weather conditions
    - User preferences
    - Predefined activity dataset
