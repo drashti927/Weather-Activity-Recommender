@@ -5,22 +5,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="body">
+<body>
 
-  <div class="container">
+<div class="bg"></div>
 
-    <h1>Weather Recommender</h1>
+<div class="card">
+  <h1>🌤 Weather Recommender</h1>
 
-    <input id="city" placeholder="City">
-    <input id="userId" placeholder="User ID">
+  <input id="userId" placeholder="User ID">
+  <input id="city" placeholder="City">
 
-    <button onclick="getRecommendation()">Get Recommendation</button>
+  <button onclick="getRecommendation()">Get Recommendation</button>
 
-    <h2 id="weather"></h2>
-    <h2 id="recommendation"></h2>
-
+  <div class="result">
+    <p id="weather"></p>
+    <p id="recommendation"></p>
   </div>
+</div>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
