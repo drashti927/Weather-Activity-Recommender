@@ -76,20 +76,20 @@ REC <--> USR
 All services communicate using lightweight HTTP requests and exchange structured JSON objects.
 
   
-### Weather Service
+## Weather Service
 - Responsible for fetching and processing live weather data.
 
 #### Endpoint:
 GET /weather?city=<city>
 
-### User Service
+## User Service
 - Stores and retrieves user preferences.
 
 #### Endpoints:
 GET /user/<id>
 POST /user/<id>
 
-### Recommendation Service
+## Recommendation Service
 Generates personalized recommendations using:
    - Weather conditions
    - User preferences
