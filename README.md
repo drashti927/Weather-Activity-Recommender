@@ -1,53 +1,44 @@
 # 🌦 Weather-Activity-Recommender System
 
 ## Project Overview
-This system is a microservice-based REST application that provides personalized activity recommendations based on real-time weather data.
+The Weather Activity Recommender System is a microservice-based REST application that provides personalized activity suggestions based on real-time weather data and user preferences.
 
-It uses:
-- Flask (backend microservices)
-- OpenWeather API (real-time weather data)
-- REST APIs (service communication)
-- HTML/CSS/JavaScript frontend
+The system demonstrates key distributed systems concepts including:
 
-It demonstrates distributed system design using REST APIs and JSON communication between independent services.
+- Microservice architecture
+- RESTful APIs
+- JSON-based communication
+- External API integration
+- Frontend-backend interaction
 
+
+## Key Features
+- Real-time weather data using OpenWeather API
+- Personalized recommendations based on weather + user preferences
+- Modular microservice design
+- Simple web-based UI (HTML/CSS/JavaScript)
+- Dynamic and randomized activity suggestions
+
+  
 ## Architecture
-The system follows a microservice architecture, where each component is independent and communicates via REST APIs.
+The system is composed of three independent microservices:
 
 ### 1. Weather Service (Port 5000)
 - Fetches real-time weather from OpenWeather API
-- Returns normalized weather data
+- Normalizes response (temperature + condition)
+- Returns structured JSON data
 
 ### 2. User Service (Port 5001)
 - Stores user preferences
 - Returns indoor/outdoor preferences
 
 ### 3. Recommendation Service (Port 5002)
+- Core orchestrator service
 - Combines weather + user data
-- Generates activity recommendations
+- Generates personalized activity recommendations
 
----
 
-## Frontend
-Simple web UI built with:
-- HTML
-- CSS (modern glassmorphism design)
-- JavaScript (fetch API)
-
----
-
-## Setup Instructions
-
-### 1. Clone the repository
-```bash
-git clone <your_repo_url>
-cd Weather-Activity-Recommender
-
-All services communicate using HTTP requests and exchange data in JSON format.
-
----
-
-### Architecture Diagram
+## Architecture Diagram
 
 ```mermaid
 flowchart LR
@@ -62,76 +53,114 @@ REC <--> WEA
 REC <--> USR
 ```
 
-## Communication
-- Protocol: HTTP
-- Architecture Style: REST
-- Data Format: JSON
 
 ## System Flow
 
-1. User enters city and user ID in CLI
-2. UI sends request to Recommendation Service
-3. Recommendation Service calls:
-   - Weather Service
-   - User Profile Service
-4. Services return JSON responses
-5. Recommendation Service generates final output
-6. Result is displayed in CLI
+1. User enters User ID and City in the web UI
+2. Frontend sends request to Recommendation Service
+3. Recommendation Service:
+   - Calls Weather Service for live weather data
+   - Calls User Service for user preferences
+4. Weather Service fetches data from OpenWeather API
+5. Services return JSON responses
+6. Recommendation Service processes logic and selects activity
+7. Result is displayed in the web interface
 
+
+## Communication Design
+- Protocol: HTTP
+- Architecture Style: REST
+- Data Format: JSON
+- Interaction Type: Synchronous request/response
+
+All services communicate using lightweight HTTP requests and exchange structured JSON objects.
+
+  
 ### Weather Service
-- Fetches real-time weather using OpenWeatherMap API
-- Returns normalized weather data
+- Responsible for fetching and processing live weather data.
 
 #### Endpoint:
 GET /weather?city=<city>
 
-### User Profile Service
-- Stores user preferences (indoor/outdoor + activities)
+### User Service
+- Stores and retrieves user preferences.
 
 #### Endpoints:
 GET /user/<id>
 POST /user/<id>
 
 ### Recommendation Service
-- Combines weather + user data
-- Generates recommendations
+Generates personalized recommendations using:
+   - Weather conditions
+   - User preferences
+   - Predefined activity dataset
 
 #### Endpoint:
 GET /recommend?userId=<id>&city=<city>
 
-### UI Client
-- Simple CLI client to interact with system.
-- Sends requests and displays results.
 ---
 
-## How to Run
-### Step 1: Install dependencies
+
+## Frontend
+The frontend is built using:
+- HTML (structure)
+- CSS (modern glassmorphism UI)
+- JavaScript (fetch API integration)
+
+### Features
+- User input form
+- Dynamic API calls
+- Live recommendation display
+
+
+## Setup Instructions
+### Step 1: Clone Repository
+```bash
+git clone https://github.com/drashti927/Weather-Activity-Recommender.git
+cd Weather-Activity-Recommender
+```
+
+### Step 2: Install dependencies
 ```bash
 pip3 install -r requirements.txt
 ```
-### Step 2: Create .env file (in the root folder)
+
+### Step 3: Create .env file (in the root folder)
 ```bash
 OPENWEATHER_API_KEY=your_api_key_here
 ```
-### Step 2: Run Weather Service (in separate terminal)
-Start Weather Service:
+
+### Step 4: Run Microservices (in separate terminals)
+Terminal 1:
 ```bash
-python src/weather_service.py
+python3 src/weather_service.py
 ```
-### Step 3: Run User Service (in separate terminal)
+Terminal 2:
 ```bash
-python src/user_service.py
+python3 src/user_service.py
 ```
-### Step 4: Run Recommendation Service (in separate terminal)
+Terminal3:
 ```bash
-python src/recommendation_service.py
+python3 src/recommendation_service.py
 ```
+
 ### Step 5: Run frontend (in a browser)
+Open:
 ```bash
 web/index.html
 ```
+
+
 ## How to Use
 1. Enter User ID (e.g., 1)
 2. Enter City (e.g., Pittsburgh)
 3. Click "Get Recommendation"
 4. View weather + personalized activity suggestion
+
+## Technologies Used
+1. Python (Flask)
+2. OpenWeather API
+3. HTML / CSS / JavaScript
+4. REST APIs
+5. JSON
+6. Microservices Architecture
