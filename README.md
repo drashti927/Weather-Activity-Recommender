@@ -47,12 +47,16 @@ UI["User Interface (CLI)"]
 REC["Recommendation Service"]
 WEA["Weather Service"]
 USR["User Profile Service"]
+API["External Weather API"]
+DB[("Database")]
 
-UI <--> REC
-REC <--> WEA
-REC <--> USR
+UI --> REC
+REC --> WEA
+REC --> USR
+WEA --> API
+USR --> DB
+
 ```
-
 
 ## System Flow
 
