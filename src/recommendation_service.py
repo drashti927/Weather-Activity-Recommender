@@ -18,14 +18,14 @@ def recommend():
     weather = requests.get(f"http://localhost:5000/weather?city={city}").json()
     user = requests.get(f"http://localhost:5001/user/{user_id}").json()
 
-    condition = weather.get("condition", "default")
+    condition = weather.get("condition", "default").lower()
 
     if "rain" in condition:
-        options = REC_DATA["rain"]
+        options = REC_DATA.get("rain", REC_DATA["default"])
     elif "clear" in condition or "sun" in condition:
-        options = REC_DATA["clear"]
+        options = REC_DATA.get("clear", REC_DATA["default"])
     elif "cloud" in condition:
-        options = REC_DATA["cloud"]
+        options = REC_DATA.get("cloud", REC_DATA["default"])
     else:
         options = REC_DATA["default"]
 
