@@ -130,16 +130,17 @@ pip3 install -r requirements.txt
 OPENWEATHER_API_KEY=your_api_key_here
 ```
 
-### Step 4: Run Microservices (in separate terminals)
-Terminal 1:
+### Step 4: Run Microservices (3 terminals required)
+**Each service must run in a separate terminal:**
+Terminal 1 - Weather Service:
 ```bash
 python3 src/weather_service.py
 ```
-Terminal 2:
+Terminal 2 - User Service:
 ```bash
 python3 src/user_service.py
 ```
-Terminal3:
+Terminal 3 - Recommendation Service:
 ```bash
 python3 src/recommendation_service.py
 ```
