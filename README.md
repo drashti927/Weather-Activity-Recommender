@@ -145,11 +145,12 @@ python3 src/recommendation_service.py
 ```
 
 ### Step 5: Run frontend (in a browser)
-Open:
+Open the file:
 ```bash
 web/index.html
 ```
-
+  - Double-click the file to open in browser
+#### All backend services must be running before opening the frontend.
 
 ## How to Use
 1. Enter User ID (e.g., 1)
@@ -164,3 +165,4 @@ web/index.html
 4. REST APIs
 5. JSON
 6. Microservices Architecture
+
