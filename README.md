@@ -132,6 +132,7 @@ OPENWEATHER_API_KEY=your_api_key_here
 
 ### Step 4: Run Microservices (3 terminals required)
 **Each service must run in a separate terminal:**
+
 Terminal 1 - Weather Service:
 ```bash
 python3 src/weather_service.py
