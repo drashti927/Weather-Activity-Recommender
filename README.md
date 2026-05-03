@@ -43,18 +43,19 @@ The system is composed of three independent microservices:
 ```mermaid
 flowchart LR
 
-UI["User Interface (CLI)"]
-REC["Recommendation Service"]
-WEA["Weather Service"]
-USR["User Profile Service"]
-API["External Weather API"]
-DB[("Database")]
+UI["Web Frontend (HTML/JS)"]
+REC["Recommendation Service (5002)"]
+WEA["Weather Service (5000)"]
+USR["User Service (5001)"]
 
-UI --> REC
-REC --> WEA
-REC --> USR
-WEA --> API
-USR --> DB
+API["OpenWeather API"]
+DATA[("Recommendation JSON Data")]
+
+UI <--> REC
+REC <--> WEA
+REC <--> USR
+WEA <--> API
+USR <--> DB
 
 ```
 
