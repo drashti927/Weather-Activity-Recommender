@@ -54,7 +54,7 @@ DATA[("Recommendation JSON Data")]
 UI <--> REC
 REC <--> WEA
 REC <--> USR
-WEA <--> API
+WEA --> API
 REC --> DATA
 
 ```
