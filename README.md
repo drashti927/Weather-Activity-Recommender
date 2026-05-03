@@ -55,7 +55,7 @@ UI <--> REC
 REC <--> WEA
 REC <--> USR
 WEA <--> API
-USR <--> DB
+REC --> DATA
 
 ```
 
