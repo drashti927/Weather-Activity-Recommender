@@ -147,11 +147,14 @@ python3 src/recommendation_service.py
 ```
 
 ### Step 5: Run frontend (in a browser)
-Open the file:
 ```bash
-web/index.html
+cd web
+python3 -m http.server 3000
 ```
-  - Double-click the file to open in browser
+Open in browser:
+```bash
+http://localhost:3000
+```
 #### All backend services must be running before opening the frontend.
 
 ## How to Use
