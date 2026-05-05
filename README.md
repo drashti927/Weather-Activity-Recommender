@@ -229,4 +229,4 @@ Weather-Activity-Recommender/
   ```bash
   python3 -m http.server 3000
   ```
-"*Open*" http://localhost:3000
+*Open* http://localhost:3000
