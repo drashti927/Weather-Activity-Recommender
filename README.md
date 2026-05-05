@@ -154,6 +154,8 @@ python3 src/recommendation_service.py
 ### Step 5: Run frontend (in a new terminal)
 ```bash
 cd web
+```
+``` bash
 python3 -m http.server 3000
 ```
 *Open in browser:*
