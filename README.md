@@ -179,6 +179,7 @@ http://localhost:3000
 6. Microservices Architecture
 
 ## Project Layout
+```text
 Weather-Activity-Recommender/
 │
 ├── data/
@@ -205,24 +206,25 @@ Weather-Activity-Recommender/
 ├── .gitignore                            # Git ignore rules
 ├── README.md                             # Project documentation
 └── requirements.txt                      # Python dependencies
+```
 
 ## Common Issues & Fixes
-1. Services not responding
+### 1. Services not responding
 - Make sure all three microservices are running on ports 5000, 5001, and 5002.
 
-2. “Failed to fetch” in browser
+### 2. “Failed to fetch” in browser
 - A backend service may be down or the URLs in web/app.js don’t match the running ports.
 
-3. Weather API not working
+### 3. Weather API not working
 - Check that .env contains a valid OpenWeather API key and restart the Weather Service.
 
-4. CORS errors  
+### 4. CORS errors  
 - Add this to each Flask service if needed:
   ```bash 
   from flask_cors import CORS
   CORS(app)
   ```
-5. Frontend not loading
+### 5. Frontend not loading
 - Start the server inside the web/ folder:
   ```bash
   python3 -m http.server 3000
