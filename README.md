@@ -87,6 +87,7 @@ All services communicate using lightweight HTTP requests and exchange structured
 #### Endpoint:
 GET /weather?city=<city>
 
+
 ## User Service
 - Stores and retrieves user preferences.
 
@@ -104,7 +105,6 @@ POST /user/<id>
 GET /recommend?userId=<id>&city=<city>
 
 ---
-
 
 ## Frontend
 The frontend is built using:
@@ -178,3 +178,53 @@ http://localhost:3000
 5. JSON
 6. Microservices Architecture
 
+## Project Layout
+Weather-Activity-Recommender/
+│
+├── data/
+│   └── recommendations.json              # Activity dataset used by Recommendation Service
+│
+├── docs/
+│   ├── architecture.md                   # System architecture documentation
+│   ├── requirements.md                   # Functional + non-functional requirements
+│   └── system-architecture-diagram.png   # Architecture diagram image
+│
+├── src/
+│   ├── weather_service.py                # Weather microservice (Port 5000)
+│   ├── user_service.py                   # User preference microservice (Port 5001)
+│   ├── recommendation_service.py         # Core orchestrator microservice (Port 5002)
+│   ├── ui.py                             # Optional UI backend (not required for main flow)
+│   └── web_server.py                     # Optional wrapper server (not required for main flow)
+│
+├── web/
+│   ├── index.html                        # Frontend UI (HTML)
+│   ├── style.css                         # Glassmorphism styling
+│   └── app.js                            # Frontend logic + API calls to backend services
+│
+├── .env                                  # Environment variables (OpenWeather API key)
+├── .gitignore                            # Git ignore rules
+├── README.md                             # Project documentation
+└── requirements.txt                      # Python dependencies
+
+## Common Issues & Fixes
+1. Services not responding
+- Make sure all three microservices are running on ports 5000, 5001, and 5002.
+
+2. “Failed to fetch” in browser
+- A backend service may be down or the URLs in web/app.js don’t match the running ports.
+
+3. Weather API not working
+- Check that .env contains a valid OpenWeather API key and restart the Weather Service.
+
+4. CORS errors  
+- Add this to each Flask service if needed:
+  ```bash 
+  from flask_cors import CORS
+  CORS(app)
+  ```
+5. Frontend not loading
+- Start the server inside the web/ folder:
+  ```bash
+  python3 -m http.server 3000
+  ```
+"*Open*" http://localhost:3000
